@@ -1,0 +1,67 @@
+package aplikasi_sharing;
+
+
+import java.util.ArrayList;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author kita
+ */
+public class Akun {
+	private String nama;
+	private int nTeman = 0;
+	private int maxTeman;
+	private String password;
+	private Akun[] friend;
+        private ArrayList<Akun> friends = new ArrayList();
+	private Teman[] teman;
+	private Media[] media;
+	
+	public Akun(String nama, String password){
+		this.nama = nama;
+		this.password = password;
+	}
+	
+	public void setNama(String nama){
+		this.nama = nama;
+	}
+	
+	public String getNama(){
+		return this.nama;
+	}
+	
+	public void addFriend(Akun p){ 
+//		if (nTeman < maxTeman) {
+//			this.teman[nTeman] = t ;
+//			nTeman++;
+//		} else {
+//			System.out.println("Teman Penuh");
+//		}
+                friends.add(p);
+		
+	}
+	
+	public void removeTeman(Teman t) {
+	boolean ketemu = false;
+	for (int i=0; i<nTeman; i++) {
+		if(teman[i].equals(t)){
+			ketemu = true;
+			teman[i] = teman[nTeman-1];
+			nTeman--;
+			break;
+		}
+		}
+	    if (!ketemu) {
+		System.out.println("Remove Teman Gagal");
+	}
+}
+
+
+	
+}
