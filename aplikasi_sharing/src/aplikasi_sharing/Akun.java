@@ -20,8 +20,8 @@ public class Akun {
 	private String password;
 	private Akun[] friend;
         private ArrayList<Akun> friends = new ArrayList();
-	private Teman[] teman;
 	private Media[] media;
+        private ArrayList<Media> friends = new ArrayList();
 	
 	public Akun(String nama, String password){
 		this.nama = nama;
@@ -37,31 +37,21 @@ public class Akun {
 	}
 	
 	public void addFriend(Akun p){ 
-//		if (nTeman < maxTeman) {
-//			this.teman[nTeman] = t ;
-//			nTeman++;
-//		} else {
-//			System.out.println("Teman Penuh");
-//		}
-                friends.add(p);
+		if (friends.size() < maxTeman) {
+                    friends.add(p);
+		System.out.println("Teman Penuh");
+		}
 		
 	}
 	
-	public void removeTeman(Teman t) {
-	boolean ketemu = false;
-	for (int i=0; i<nTeman; i++) {
-		if(teman[i].equals(t)){
-			ketemu = true;
-			teman[i] = teman[nTeman-1];
-			nTeman--;
-			break;
-		}
-		}
-	    if (!ketemu) {
-		System.out.println("Remove Teman Gagal");
-	}
+	public void removeTeman(int i) {
+            if (i < friends.size() || i > maxTeman) System.out.println("Indeks tidak sesuai");
+            else friends.remove(i);
 }
 
-
+public void createFoto(String path, int size) {
+    Media m = new Foto(path, size, "Foto");
+//    media.add(m);
+}
 	
 }
