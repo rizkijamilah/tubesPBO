@@ -13,7 +13,7 @@ package aplikasi_sharing;
 public abstract class Media {
 	private String nama;
 	private int ukuran;
-	private String jenis;
+        private String path;
 	private Foto[] foto;
 	private Video[] video;
 	

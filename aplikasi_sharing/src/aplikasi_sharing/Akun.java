@@ -49,9 +49,9 @@ public class Akun {
             else friends.remove(i);
 }
 
-public void createFoto(String path, int size) {
+public void createFoto(String path, int ukuran) {
     Media m = new Foto(path, size, "Foto");
-//    media.add(m);
+    media.add(m);
 }
 	
 }
